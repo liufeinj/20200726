@@ -1,0 +1,14 @@
+Oracle Linux 7.4 安装 Oracle 12C
+1.安装oracle预配置包
+yum install oracle-database-server-12cR2-preinstall -y
+2.使内核参数生效
+sysctl -p
+
+3.配置oracle用户环境变量
+vim /home/oracle/.bash_profile
+export ORACLE_SID=orcl
+export ORACLE_BASE=/home/oracle/database
+export ORACLE_HOME=$ORACLE_BASE/product/12c/db_1
+export PATH=/usr/sbin:$PATH
+export PATH=${PATH}:${ORACLE_HOME}/bin/;
+source /home/oracle/.bash_profile    #使其生效
